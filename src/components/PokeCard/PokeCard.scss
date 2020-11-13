@@ -1,0 +1,36 @@
+@import "../../theme.scss";
+
+.card {
+  width: 320px;
+  height: 398px;
+  border-radius: 8px;
+  background-color: $background-white;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 12px;
+  position: relative;
+  img {
+    max-width: 240px;
+    margin-top: 40px;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: $primary-color;
+    position: absolute;
+    bottom: 0;
+
+    p {
+      color: $text-light;
+      font-size: 2.4ex;
+    }
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}

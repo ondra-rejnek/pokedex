@@ -1,0 +1,54 @@
+@import "../../theme.scss";
+
+.wrapper {
+  display: flex;
+}
+
+.page-tile {
+  height: 56px;
+  width: 56px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2ex;
+  margin: 4px;
+  p {
+    color: $text-grey;
+  }
+  &:hover {
+    cursor: pointer;
+    p {
+      color: darken($text-grey, 50%);
+    }
+  }
+}
+
+.page-tile-selected {
+  @extend .page-tile;
+  border: 2px solid darken($text-grey, 50%);
+  p {
+    color: darken($text-grey, 50%);
+  }
+  &:hover {
+    cursor: default;
+  }
+}
+
+.control-tile {
+  @extend .page-tile;
+  i {
+    color: $text-grey;
+    font-size: 2.5ex;
+  }
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 2px solid $text-grey;
+  &:hover {
+    cursor: pointer;
+    border: 2px solid darken($text-grey, 50%);
+    i {
+      color: darken($text-grey, 50%);
+    }
+  }
+}

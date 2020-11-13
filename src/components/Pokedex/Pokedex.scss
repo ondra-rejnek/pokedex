@@ -1,0 +1,33 @@
+@import "../../theme.scss";
+
+.header {
+  background: $primary-color;
+  color: $text-light;
+  height: 164px;
+  padding-left: 140px;
+  padding-right: 140px;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      font-size: 40px;
+      padding-top: 40px;
+    }
+    ul {
+      display: flex;
+      list-style-type: none;
+      font-size: 25px;
+      font-weight: 400;
+      padding-top: 45px;
+    }
+    li {
+      padding: 15px;
+    }
+  }
+}
+
+.body {
+  background-color: rgb(219, 253, 255);
+  background-size: 100%;
+}
