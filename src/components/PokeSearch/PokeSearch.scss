@@ -27,3 +27,23 @@
     font-size: 3ex;
   }
 }
+
+.clear-btn {
+  display: flex;
+  align-items: center;
+  i {
+    color: lighten($text-grey, 28%);
+  }
+}
+
+.clear-btn-active {
+  display: flex;
+  align-items: center;
+  i {
+    color: $text-grey;
+    &:hover {
+      cursor: pointer;
+      color: darken($text-grey, 50%);
+    }
+  }
+}

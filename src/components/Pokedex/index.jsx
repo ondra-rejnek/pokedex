@@ -6,11 +6,12 @@ import PokeCard from "../PokeCard";
 import Pagination from "../Pagination";
 import PokeMenu from "../PokeMenu";
 
-export default function PokeContainer() {
+export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonPerPage] = useState(12);
+  const [searchValue, setSearchValue] = useState("");
 
   const fetchPokemonData = async (pokemon, index) => {
     let dataUrl = pokemon.url;
@@ -31,10 +32,20 @@ export default function PokeContainer() {
     setLoading(false);
   };
 
+  const getFilteredPokemons = () => {
+    const filteredResults = pokemons.filter((pokemon) =>
+      pokemon.name.includes(searchValue)
+    );
+    return filteredResults;
+  };
+
   const getCurrentPokemons = () => {
+    //filter podle searche
+    const filteredResults = getFilteredPokemons();
+    //arr pro pagination
     const indexOfLastPokemon = currentPage * pokemonPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
-    const currentPokemons = pokemons.slice(
+    const currentPokemons = filteredResults.slice(
       indexOfFirstPokemon,
       indexOfLastPokemon
     );
@@ -45,14 +56,23 @@ export default function PokeContainer() {
     setCurrentPage(pageNumber);
   };
 
+  const clearSearch = () => {
+    setSearchValue("");
+  };
+
   useEffect(() => {
     fetchPokemons();
   }, []);
 
   return (
     <div className="wrapper">
-      <PokeSearch />
-      <PokeMenu />
+      <PokeSearch
+        setSearchValue={setSearchValue}
+        setCurrentPage={setCurrentPage}
+        searchValue={searchValue}
+        clearSearch={clearSearch}
+      />
+      <PokeMenu searchValue={searchValue} clearSearch={clearSearch} />
       <div className="tile-section">
         {loading ? (
           <p>Loading...</p>
@@ -64,7 +84,7 @@ export default function PokeContainer() {
       </div>
       <Pagination
         pokemonsPerPage={pokemonPerPage}
-        allPokemons={pokemons.length}
+        allPokemons={getFilteredPokemons().length}
         paginate={paginate}
         currentPage={currentPage}
       />
