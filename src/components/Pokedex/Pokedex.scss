@@ -1,33 +1,12 @@
 @import "../../theme.scss";
 
-.header {
-  background: $primary-color;
-  color: $text-light;
-  height: 164px;
-  padding-left: 140px;
-  padding-right: 140px;
-  nav {
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  .tile-section {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    h1 {
-      font-size: 40px;
-      padding-top: 40px;
-    }
-    ul {
-      display: flex;
-      list-style-type: none;
-      font-size: 25px;
-      font-weight: 400;
-      padding-top: 45px;
-    }
-    li {
-      padding: 15px;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
   }
-}
-
-.body {
-  background-color: rgb(219, 253, 255);
-  background-size: 100%;
 }

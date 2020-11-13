@@ -1,7 +1,10 @@
 @import "../../theme.scss";
 
-.wrapper {
+.wrapper-page {
   display: flex;
+  justify-content: center;
+  margin-top: 130px;
+  padding-bottom: 260px;
 }
 
 .page-tile {

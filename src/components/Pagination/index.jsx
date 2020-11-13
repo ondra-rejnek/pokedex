@@ -26,7 +26,7 @@ export default function Pagination({
   };
 
   return (
-    <div className="wrapper">
+    <div className="wrapper-page">
       <ControlTile
         control={"decrement"}
         paginate={paginate}

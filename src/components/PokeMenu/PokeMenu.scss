@@ -1,0 +1,14 @@
+@import "../../theme.scss";
+
+.menu {
+  display: flex;
+  align-items: center;
+  font-size: 2.6ex;
+  font-weight: 600;
+  color: $text-dark;
+  i {
+    padding-right: 30px;
+    font-size: 3ex;
+  }
+  margin-bottom: 45px;
+}
