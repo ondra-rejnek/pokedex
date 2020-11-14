@@ -1,0 +1,44 @@
+@import "../../theme.scss";
+
+.profile-wrapper {
+  padding: 30px;
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  margin-bottom: 20px;
+  div {
+    width: 80px;
+    padding: 10px;
+    background-color: lighten($primary-color, 30%);
+    border-radius: 8px;
+    color: $text-dark;
+    font-size: 2.2ex;
+    font-weight: 600;
+  }
+  p {
+    flex-grow: 1;
+    font-size: 2.1ex;
+  }
+}
+
+.abilities {
+  div {
+    margin-top: 40px;
+    margin-bottom: 12px;
+    width: 145px;
+    padding: 10px;
+    background-color: lighten($primary-color, 30%);
+    border-radius: 8px;
+    color: $text-dark;
+    font-size: 2.2ex;
+    font-weight: 600;
+  }
+  p {
+    padding: 5px;
+    text-align: left;
+    font-size: 2.1ex;
+  }
+}

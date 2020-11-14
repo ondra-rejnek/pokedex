@@ -35,6 +35,7 @@ export default function Pagination({
       />
       {getPageNumbers().map((number) => (
         <PageTile
+          key={number}
           pageNumber={number}
           paginate={paginate}
           isSelected={isSelected(number)}
