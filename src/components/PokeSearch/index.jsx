@@ -1,15 +1,13 @@
 import React from "react";
 import "./PokeSearch.scss";
-import ClearBtn from "./ClearBtn";
 
 export default function PokeSearch({
   setSearchValue,
   setCurrentPage,
   searchValue,
-  clearSearch,
 }) {
   const handleChange = (e) => {
-    setSearchValue(e.target.value.toLowerCase());
+    setSearchValue(e.target.value);
     setCurrentPage(1);
   };
 
@@ -24,7 +22,12 @@ export default function PokeSearch({
           spellCheck={false}
           value={searchValue}
         />
-        <ClearBtn active={searchValue} clearSearch={clearSearch} />
+        <div
+          className={searchValue ? "clear-btn-active" : "clear-btn"}
+          onClick={() => setSearchValue("")}
+        >
+          <i className="fas fa-times"></i>
+        </div>
       </div>
     </div>
   );

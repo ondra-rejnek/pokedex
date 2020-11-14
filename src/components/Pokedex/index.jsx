@@ -5,6 +5,7 @@ import axios from "axios";
 import PokeCard from "../PokeCard";
 import Pagination from "../Pagination";
 import PokeMenu from "../PokeMenu";
+import AllEntries from "../AllEntries.jsx";
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]);
@@ -34,7 +35,7 @@ export default function Pokedex() {
 
   const getFilteredPokemons = () => {
     const filteredResults = pokemons.filter((pokemon) =>
-      pokemon.name.includes(searchValue)
+      pokemon.name.includes(searchValue.toLowerCase())
     );
     return filteredResults;
   };
@@ -56,8 +57,24 @@ export default function Pokedex() {
     setCurrentPage(pageNumber);
   };
 
-  const clearSearch = () => {
-    setSearchValue("");
+  const renderPagination = () => {
+    if (getFilteredPokemons().length > pokemonPerPage) {
+      return (
+        <Pagination
+          pokemonsPerPage={pokemonPerPage}
+          allPokemons={getFilteredPokemons().length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+      );
+    } else {
+      return (
+        <AllEntries
+          error={!getCurrentPokemons().length}
+          setSearchValue={setSearchValue}
+        />
+      );
+    }
   };
 
   useEffect(() => {
@@ -70,9 +87,8 @@ export default function Pokedex() {
         setSearchValue={setSearchValue}
         setCurrentPage={setCurrentPage}
         searchValue={searchValue}
-        clearSearch={clearSearch}
       />
-      <PokeMenu searchValue={searchValue} clearSearch={clearSearch} />
+      <PokeMenu searchValue={searchValue} setSearchValue={setSearchValue} />
       <div className="tile-section">
         {loading ? (
           <p>Loading...</p>
@@ -82,12 +98,7 @@ export default function Pokedex() {
           })
         )}
       </div>
-      <Pagination
-        pokemonsPerPage={pokemonPerPage}
-        allPokemons={getFilteredPokemons().length}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
+      {renderPagination()}
     </div>
   );
 }

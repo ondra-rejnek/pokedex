@@ -1,7 +1,7 @@
 import React from "react";
 import "./PokeMenu.scss";
 
-export default function PokeMenu({ searchValue, clearSearch }) {
+export default function PokeMenu({ searchValue, setSearchValue }) {
   if (searchValue) {
     return (
       <div className="clear-filter">
@@ -9,7 +9,7 @@ export default function PokeMenu({ searchValue, clearSearch }) {
           <i class="fas fa-filter"></i>
           <p>Výsledky hledání</p>
         </div>
-        <div className="clear-menu" onClick={() => clearSearch()}>
+        <div className="clear-menu" onClick={() => setSearchValue("")}>
           <i class="far fa-times-circle"></i>
           <p>
             <u>Smazat filtry</u>
