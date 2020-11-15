@@ -58,7 +58,6 @@ export default function Pokedex({ pokemons }) {
 
   return (
     <div className="wrapper">
-      {/* {openModal ? <PokeModal /> : null} */}
       <PokeSearch
         setSearchValue={setSearchValue}
         setCurrentPage={setCurrentPage}

@@ -1,8 +1,5 @@
 @import "../../theme.scss";
 
-.profile-wrapper {
-  // padding: 30px;
-}
 .profile-container {
   @include flexBox(space-between);
   width: 250px;

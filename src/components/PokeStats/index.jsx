@@ -30,7 +30,7 @@ export default function PokeStats({ stats }) {
   };
 
   return (
-    <div className="stats-wrapper">
+    <div>
       {stats.map((stat, index) => {
         return (
           <div className="stat-container" key={index}>

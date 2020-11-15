@@ -19,7 +19,7 @@ export default function PokeProfile({ pokeData }) {
   };
 
   return (
-    <div className="profile-wrapper">
+    <div>
       <div>
         <div className="profile-container">
           <div>Typ</div>
