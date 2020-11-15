@@ -6,6 +6,12 @@ $background-white: #fcfcfc;
 $font-stack: Poppins, sans-serif;
 $radius: 8px;
 
+//breakpoints
+$large: 1860px;
+$medium: 1200px;
+$small: 700px;
+$tiny: 570px;
+
 @mixin flexBox($justify) {
   display: flex;
   align-items: center;

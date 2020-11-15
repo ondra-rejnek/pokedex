@@ -37,3 +37,11 @@
 .tick {
   color: #07b330;
 }
+
+@media (max-width: $tiny) {
+  .entries-wrapper {
+    fieldset {
+      width: 320px;
+    }
+  }
+}

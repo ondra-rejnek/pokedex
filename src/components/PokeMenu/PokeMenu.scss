@@ -1,13 +1,16 @@
 @import "../../theme.scss";
 
+$margin: 40px;
+
 .menu {
   display: flex;
   align-items: center;
+  margin-left: $margin;
+  gap: 30px;
   font-size: 2.6ex;
   font-weight: 600;
   color: $text-dark;
   i {
-    padding-right: 30px;
     font-size: 3ex;
   }
   margin-bottom: 45px;
@@ -16,16 +19,34 @@
 .clear-filter {
   display: flex;
   justify-content: space-between;
+  margin-right: $margin;
   .clear-menu {
     margin-bottom: 45px;
     @include flexBox(center);
+    gap: 10px;
     font-size: 2ex;
     color: $primary-color;
     &:hover {
       cursor: pointer;
     }
-    i {
-      margin-right: 10px;
-    }
+  }
+}
+
+@media (max-width: $medium) {
+  .clear-filter {
+    margin-right: 0px;
+  }
+  .menu {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: $small) {
+  .clear-filter {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .menu {
+    justify-content: center;
   }
 }

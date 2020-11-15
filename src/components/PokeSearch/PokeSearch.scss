@@ -15,13 +15,14 @@
   color: $text-grey;
   input {
     width: 100%;
-    max-width: 550px;
     font-size: 2.2ex;
     outline: none;
     border: hidden;
     color: $text-grey;
   }
   i {
+    padding-right: 30px;
+    padding-left: 30px;
     font-size: 3ex;
   }
 }

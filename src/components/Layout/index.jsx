@@ -4,7 +4,7 @@ import "./Layout.scss";
 
 export default function Layout(props) {
   return (
-    <div>
+    <div className="layout">
       <Header />
       <div className="body">{props.children}</div>
     </div>

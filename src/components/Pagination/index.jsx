@@ -37,7 +37,7 @@ export default function Pagination({
     }
     if (number === currentPage + 2 || number === currentPage - 2) {
       return (
-        <div className="dots-tile">
+        <div className="dots-tile" key={number}>
           <p>...</p>
         </div>
       );
