@@ -17,6 +17,33 @@ export default function Pagination({
     return pageNumbers;
   };
 
+  const filterPageNumbers = (number) => {
+    const lastPageNumber = Math.ceil(allPokemons / pokemonsPerPage);
+    if (
+      number === 1 ||
+      number === lastPageNumber ||
+      number === currentPage ||
+      number === currentPage + 1 ||
+      number === currentPage - 1
+    ) {
+      return (
+        <PageTile
+          key={number}
+          pageNumber={number}
+          paginate={paginate}
+          isSelected={isSelected(number)}
+        />
+      );
+    }
+    if (number === currentPage + 2 || number === currentPage - 2) {
+      return (
+        <div className="dots-tile">
+          <p>...</p>
+        </div>
+      );
+    }
+  };
+
   const isSelected = (indexNum) => {
     if (indexNum === currentPage) {
       return true;
@@ -33,14 +60,7 @@ export default function Pagination({
         currentPage={currentPage}
         pageNumbers={getPageNumbers().length}
       />
-      {getPageNumbers().map((number) => (
-        <PageTile
-          key={number}
-          pageNumber={number}
-          paginate={paginate}
-          isSelected={isSelected(number)}
-        />
-      ))}
+      {getPageNumbers().map((number) => filterPageNumbers(number))}
       <ControlTile
         control={"increment"}
         paginate={paginate}

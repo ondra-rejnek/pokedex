@@ -19,7 +19,10 @@ export default function PokeStats({ stats }) {
   const abilityBar = (stat) => {
     return (
       <div className="bar-outer">
-        <div className="bar-inner" style={{ width: `${stat.base_stat}%` }}>
+        <div
+          className="bar-inner"
+          style={{ width: `${stat.base_stat / 1.6}%` }}
+        >
           <p>{stat.base_stat}</p>
         </div>
       </div>

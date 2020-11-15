@@ -18,9 +18,7 @@
   justify-content: space-between;
   .clear-menu {
     margin-bottom: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexBox(center);
     font-size: 2ex;
     color: $primary-color;
     &:hover {

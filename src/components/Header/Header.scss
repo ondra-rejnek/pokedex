@@ -4,15 +4,12 @@
   background: $primary-color;
   color: $text-light;
   height: 130px;
-  display: flex;
-  justify-content: center;
+  @include flexBox(default);
   padding: 0px 140px 0px 140px;
 
   nav {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexBox(space-between);
     li {
       padding-left: 60px;
     }

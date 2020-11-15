@@ -10,10 +10,8 @@
   max-width: 820px;
   height: 80px;
   background-color: $background-white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  border-radius: $radius;
+  @include flexBox(space-evenly);
   color: $text-grey;
   input {
     width: 100%;

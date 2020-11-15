@@ -4,16 +4,14 @@
   padding: 30px;
 }
 .profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flexBox(space-between);
   width: 250px;
   margin-bottom: 20px;
   div {
     width: 80px;
     padding: 10px;
     background-color: lighten($primary-color, 30%);
-    border-radius: 8px;
+    border-radius: $radius;
     color: $text-dark;
     font-size: 2.2ex;
     font-weight: 600;
@@ -31,7 +29,7 @@
     width: 145px;
     padding: 10px;
     background-color: lighten($primary-color, 30%);
-    border-radius: 8px;
+    border-radius: $radius;
     color: $text-dark;
     font-size: 2.2ex;
     font-weight: 600;

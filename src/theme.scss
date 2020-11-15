@@ -4,6 +4,13 @@ $text-grey: #a5a5a5;
 $text-dark: #1d1d1d;
 $background-white: #fcfcfc;
 $font-stack: Poppins, sans-serif;
+$radius: 8px;
+
+@mixin flexBox($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
 
 * {
   box-sizing: border-box;

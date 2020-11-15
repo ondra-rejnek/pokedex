@@ -6,9 +6,7 @@
   width: 950px;
   margin: 0 auto;
   .back-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexBox(space-between);
     width: 220px;
     font-size: 2.3ex;
     color: $text-dark;
@@ -22,18 +20,16 @@
   }
   .tabs {
     display: flex;
+    justify-content: space-between;
     float: right;
     width: 50%;
-    justify-content: space-between;
     gap: 20px;
     .tab {
       width: 240px;
       height: 76px;
       background-color: $background-white;
       border-radius: 8px 8px 0px 0px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flexBox(center);
       gap: 20px;
       color: $primary-color;
       font-size: 2.3ex;
@@ -59,13 +55,13 @@
   background-color: $background-white;
   display: flex;
   justify-content: space-around;
-  border-radius: 8px 0px 8px 8px;
+  border-radius: $radius 0px $radius $radius;
   .img-container {
     padding: 30px 0px 30px 30px;
     width: 50%;
     .image {
       border: 2px solid lighten($text-grey, 20%);
-      border-radius: 8px;
+      border-radius: $radius;
       height: 100%;
       img {
         width: 320px;

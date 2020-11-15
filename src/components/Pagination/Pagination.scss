@@ -1,8 +1,7 @@
 @import "../../theme.scss";
 
 .wrapper-page {
-  display: flex;
-  justify-content: center;
+  @include flexBox(center);
   margin-top: 130px;
   padding-bottom: 260px;
 }
@@ -10,10 +9,8 @@
 .page-tile {
   height: 56px;
   width: 56px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: $radius;
+  @include flexBox(center);
   font-size: 2.2ex;
   margin: 4px;
   p {
@@ -52,6 +49,16 @@
     border: 2px solid darken($text-grey, 50%);
     i {
       color: darken($text-grey, 50%);
+    }
+  }
+}
+
+.dots-tile {
+  @extend .page-tile;
+  &:hover {
+    cursor: default;
+    p {
+      color: $text-grey;
     }
   }
 }

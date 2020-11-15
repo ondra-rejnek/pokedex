@@ -22,7 +22,7 @@
 .bar-outer {
   height: 48px;
   background-color: lighten($primary-color, 30%);
-  border-radius: 8px;
+  border-radius: $radius;
   overflow: hidden;
   .bar-inner {
     background-color: $primary-color;
