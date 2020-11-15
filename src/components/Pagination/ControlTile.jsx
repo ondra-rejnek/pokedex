@@ -19,7 +19,7 @@ export default function ControlTile({
   return (
     <div className="control-tile" onClick={() => handleClick()}>
       <i
-        class={
+        className={
           control === "increment" ? "fas fa-angle-right" : "fas fa-angle-left"
         }
       ></i>

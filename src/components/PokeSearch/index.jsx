@@ -14,7 +14,7 @@ export default function PokeSearch({
   return (
     <div className="search-wrapper">
       <div className="search-box">
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
         <input
           onChange={handleChange}
           type="text"

@@ -6,11 +6,11 @@ export default function PokeMenu({ searchValue, setSearchValue }) {
     return (
       <div className="clear-filter">
         <div className="menu">
-          <i class="fas fa-filter"></i>
+          <i className="fas fa-filter"></i>
           <p>Výsledky hledání</p>
         </div>
         <div className="clear-menu" onClick={() => setSearchValue("")}>
-          <i class="far fa-times-circle"></i>
+          <i className="far fa-times-circle"></i>
           <p>
             <u>Smazat filtry</u>
           </p>
@@ -20,7 +20,7 @@ export default function PokeMenu({ searchValue, setSearchValue }) {
   } else {
     return (
       <div className="menu">
-        <i class="fas fa-th"></i>
+        <i className="fas fa-th"></i>
         <p>Přehled Pokémonů</p>
       </div>
     );

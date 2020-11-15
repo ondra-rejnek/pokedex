@@ -7,7 +7,6 @@ export default function PokeProfile({ pokeData }) {
     pokeData.types.forEach((type) => {
       types = types + capitalize(type.type.name) + " ";
     });
-    console.log(types);
     return types;
   };
 
@@ -37,8 +36,8 @@ export default function PokeProfile({ pokeData }) {
       </div>
       <div className="abilities">
         <div>Dovednosti</div>
-        {pokeData.abilities.map((ability) => {
-          return <p>{getAbilities(ability.ability.name)}</p>;
+        {pokeData.abilities.map((ability, index) => {
+          return <p key={index}>{getAbilities(ability.ability.name)}</p>;
         })}
       </div>
     </div>

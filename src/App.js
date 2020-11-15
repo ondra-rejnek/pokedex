@@ -21,12 +21,10 @@ function App() {
   const fetchPokemons = async () => {
     setLoading(true);
     const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
-    //console.log(res.data.results);
     res.data.results.forEach((pokemon, index) => {
       fetchPokemonData(pokemon, index);
     });
     setLoading(false);
-    await console.log(pokemons);
   };
 
   useEffect(() => {
@@ -40,10 +38,10 @@ function App() {
           {loading ? (
             <p>Loading...</p>
           ) : (
-            pokemons.map((pokemon) => {
+            pokemons.map((pokemon, index) => {
               return (
-                <Route path={`/${pokemon.name}`}>
-                  <PokeDetails pokeData={pokemon} />
+                <Route path={`/${pokemon.name}`} key={index}>
+                  <PokeDetails pokeData={pokemon} key={index} />
                 </Route>
               );
             })

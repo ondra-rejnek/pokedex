@@ -28,9 +28,9 @@ export default function PokeStats({ stats }) {
 
   return (
     <div className="stats-wrapper">
-      {stats.map((stat) => {
+      {stats.map((stat, index) => {
         return (
-          <div className="stat-container">
+          <div className="stat-container" key={index}>
             <p>{getAbilities(stat.stat.name)}</p>
             {abilityBar(stat)}
           </div>

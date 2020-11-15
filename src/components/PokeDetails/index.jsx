@@ -23,12 +23,13 @@ export default function PokeDetails({ pokeData }) {
   const history = useHistory();
   const handleClick = () => {
     history.push("/");
+    window.scrollTo(0, 0);
   };
 
   return (
     <div className="detail-wrapper">
       <div className="back-menu" onClick={() => handleClick()}>
-        <i class="fas fa-angle-left" />
+        <i className="fas fa-angle-left" />
         <p>Zpět na přehled</p>
       </div>
       <div className="tabs">
@@ -37,7 +38,7 @@ export default function PokeDetails({ pokeData }) {
           className={statsOpen ? "tab-inactive" : "tab"}
           onClick={(e) => changeTab(e)}
         >
-          <i class="far fa-grin-alt"></i>
+          <i className="far fa-grin-alt"></i>
           <p>Profil</p>
         </div>
         <div
@@ -45,7 +46,7 @@ export default function PokeDetails({ pokeData }) {
           className={statsOpen ? "tab" : "tab-inactive"}
           onClick={(e) => changeTab(e)}
         >
-          <i class="fas fa-sort"></i>
+          <i className="fas fa-sort"></i>
           <p>Statistiky</p>
         </div>
       </div>
